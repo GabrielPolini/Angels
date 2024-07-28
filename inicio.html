@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="/Aodmcls.webp" alt="Logo do Clube" class="logo">
+        <h1 class="glitch">Bem-vindo</h1>
+    </header>
+    <div class="welcome-container">
+        <h2 id="welcome-message" class="glitch"></h2>
+        <nav class="menu">
+            <a href="regras.html">Regras e Leis</a>
+            <a href="avisos.html">Avisos</a>
+            <a href="membros.html">Membros</a>
+        </nav>
+    </div>
+    <script>
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        window.onload = () => {
+            const username = getQueryParameter('username');
+            const welcomeMessage = `Olá, ${username}!`;
+            document.getElementById('welcome-message').textContent = welcomeMessage;
+        };
+    </script>
+</body>
+</html>
